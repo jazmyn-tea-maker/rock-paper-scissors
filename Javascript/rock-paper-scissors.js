@@ -61,9 +61,9 @@ let commenceDuel = () => {
         round++;
     }
     console.log('Player: '+playerWins, 'Computer: '+computerWins);
+    playerWins = 0;
+    computerWins = 0;
     playAgain();
 }
 
 commenceDuel();
-playerWins = 0;
-computerWins = 0;
