@@ -26,6 +26,8 @@ let winnerDeclaration = () => {
 
 let playAgain = () => {
     winnerDeclaration();
+    playerWins = 0;
+    computerWins = 0;
     if (confirm('Would you like to play again?')) {
         alert('Game on!');
         computerPlay();
@@ -42,6 +44,7 @@ let commenceDuel = () => {
     while (round <= 5) {
         computerPlay();
         userPlay();
+        round = 1;
         if (playerSelect == computerSelect) {
             alert('It\'s a tie! Good luck next time.'); 
             
