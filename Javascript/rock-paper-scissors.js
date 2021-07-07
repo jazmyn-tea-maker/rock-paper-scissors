@@ -44,7 +44,6 @@ let commenceDuel = () => {
     while (round <= 5) {
         computerPlay();
         userPlay();
-        round = 1;
         if (playerSelect == computerSelect) {
             alert('It\'s a tie! Good luck next time.'); 
             
@@ -66,6 +65,7 @@ let commenceDuel = () => {
     console.log('Player: '+playerWins, 'Computer: '+computerWins);
     playerWins = 0;
     computerWins = 0;
+    round = 1;
     playAgain();
 }
 
