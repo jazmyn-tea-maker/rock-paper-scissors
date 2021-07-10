@@ -25,8 +25,6 @@ let userPlay = () => {
     return playerSelect;
 };
 
-//Explanatory. Takes values of win counts to determine
-//who will be declared (alerted) as winner.
 let winnerDeclaration = () => {
     (playerWins == computerWins) ? alert('Wow, what are the odds! You\'ve tied!') :
     (playerWins > computerWins) ? alert(`You, player, are now named SUPREME LEADER, with a score of ${playerWins} rounds out of 5!`) : 
@@ -57,11 +55,11 @@ let commenceDuel = () => {
             alert('It\'s a tie! Good luck next time.'); 
             
         } else if (playerSelect == 'rock' && computerSelect == 'scissors' || playerSelect == 'paper' && computerSelect == 'rock' || playerSelect == 'scissors' && computerSelect == 'paper') {
-            playerWins++; //Adds to playerWins.
+            playerWins++;
             alert(`You are the victor! The computer chose ${computerSelect}`);
             
         } else if (playerSelect == 'scissors' && computerSelect == 'rock' || playerSelect == 'rock' && computerSelect == 'paper' || playerSelect == 'paper' && computerSelect == 'scissors') {
-            computerWins++; //Adds to compWins
+            computerWins++; 
             alert(`You\'ve been trounced! The computer chose ${computerSelect}! Better luck next time.`);
 
         } else {
@@ -69,7 +67,7 @@ let commenceDuel = () => {
             computerWins++;
 
         }
-        round++; //Repeatedly adds on the next round.
+        round++;
     }
     console.log('Player: '+playerWins, 'Computer: '+computerWins);
     round = 1; //reset
