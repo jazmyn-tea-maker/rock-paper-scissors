@@ -76,4 +76,4 @@ let commenceDuel = () => {
     playAgain();
 }
 
-commenceDuel();
+//commenceDuel();

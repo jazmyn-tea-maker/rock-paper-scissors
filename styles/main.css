@@ -1,0 +1,147 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: violet;
+}
+
+.game-bg {
+    width: 600px;
+    height: 100vh;
+    display: block;
+    position: relative;
+    margin: auto;
+    z-index: 0;
+    background-color: #502749;
+}
+
+#Robot {
+    height: 150px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 10px;
+    position: absolute;
+}
+
+#left-arm, #right-arm {
+    animation-name: armPump;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#left-arm {
+    animation-name: leftArmRotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-origin: center;
+}
+
+#right-arm {
+    animation-name: rightArmRotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-origin: center;
+}
+
+@keyframes armPump {
+    50% {
+        transform: translate(0px, 75px);
+    }
+}
+
+@keyframes leftArmRotate {
+    50% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes rightArmRotate {
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+#robo-head, #head-antennae{
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translate(0px, 20px);
+    }
+}
+
+.top-bar {
+    height: 15px;
+    width:400px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 150px;
+    background-color:#331a25;
+}
+
+.bottom-bar {
+    height: 15px;
+    width:400px;
+    position: absolute;
+    bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background-color: #331a25;
+}
+
+.robo-tile-div {
+    height: auto;
+    width: 400px;
+    display: flex;
+    position: absolute;
+    top: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    background-color: #502749;
+}
+
+.user-tile-div {
+    height: auto;
+    width: 400px;
+    display: flex;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 31px;
+    justify-content: space-between;
+}
+
+.tile-style {
+    width: 120px;
+    height: 100px;
+    position: relative;
+    background-color: rgb(206, 168, 238);
+}
+
+#computer-rock-tile {
+    
+}
+
+#computer-paper-tile {
+    
+}
+
+#computer-scissors-tile {
+   
+}
