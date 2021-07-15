@@ -40,6 +40,32 @@ body {
     top: 283px;
 }
 
+.hide-flag-div {
+    height: 170px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:1;
+    left: 0;
+    right: 275px;
+    top: 115px;
+    background-color: #502749;
+}
+
+.hide-flag-div2 {
+    height: 170px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:1;
+    left: 275px;
+    right: 0px;
+    top: 115px;
+    background-color: #502749;
+}
+
 .flag-svg {
     height: 150px;
     width: 100px;
@@ -86,6 +112,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    z-index: 3;
     left: 0;
     right: 0;
     top: 10px;
@@ -112,7 +139,7 @@ body {
     transform-origin: center;
 }
 
-/* @keyframes armPump {
+@keyframes armPump {
     50% {
         transform: translate(0px, 75px);
     }
@@ -128,7 +155,7 @@ body {
     50% {
         transform: rotate(5deg);
     }
-} */
+}  
 
 #robo-head, #head-antennae{
     animation-name: bounce;
@@ -136,11 +163,11 @@ body {
     animation-iteration-count: infinite;
 }
 
-/* @keyframes bounce {
+@keyframes bounce {
     50% {
         transform: translate(0px, 20px);
     }
-} */
+}
 
 .top-bar {
     height: 15px;
