@@ -23,7 +23,7 @@
 
 #user-3-tile:hover, #user-2-tile:hover, #user-1-tile:hover {
     animation-name: weeWoo;
-    animation-duration: .5s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
 }
 

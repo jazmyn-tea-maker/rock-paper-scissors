@@ -119,6 +119,27 @@ body {
     background-color: #24918c;
 }
 
+#play-button {
+    display: block;
+    position: relative;
+    margin: auto;
+    top: 57vh;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(87, 80, 187);
+    color: white;
+    background-color: rgb(87, 80, 187);
+    font-family: 'Oswald';
+    font-size: 20px;
+    animation-name: weeWoo;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+}
+
+#play-button:hover {
+    animation: unset;
+}
+
 #score-counter-comp {
     width: 100px;
     height: 75px;
@@ -212,6 +233,12 @@ body {
     position: relative;
     z-index: 1;
     bottom: 105px;
+}
+
+@keyframes weeWoo {
+    50% {
+        transform: scale(1.09);
+    }
 }
 
 @media (max-height: 300px) {
