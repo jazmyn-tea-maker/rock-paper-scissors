@@ -1,21 +1,34 @@
 #comp-1-tile {
-
+    transform: scaleX(-1);
 }
 
 #comp-2-tile {
-
+    transform: scale(-1);
 }
 
 #comp-3-tile {
     transform: rotate(180deg);
 }
 
-#user-1-tile {
+/* #user-1-tile {
+
+} */
+
+/* #user-2-tile {
+
+} */
+
+/* #user-3-tile {
+} */
+
+#user-3-tile:hover, #user-2-tile:hover, #user-1-tile:hover {
+    animation-name: weeWoo;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
 }
 
-#user-2-tile {
-    transform: rotate(180deg);
-}
-
-#user-3-tile {
+@keyframes weeWoo {
+    50% {
+        transform: scale(1.09);
+    }
 }

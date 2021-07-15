@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="scissors-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 120 100" style="enable-background:new 0 0 120 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#A1A3A6;stroke:#8C8E90;stroke-miterlimit:10;}
+	.st1{fill:#BC1C66;stroke:#BC1F66;stroke-miterlimit:10;}
+</style>
+<g id="bottom-scissor">
+	<path id="bottom-blade" class="st0" d="M57.14,65.67c0,0,8.21-8.16,13.88-5.38c0,0,13.87-44.67,12.65-50.3
+		c-1.21-5.63-8.27-7.15-8.27-7.15L53.23,49.42l-5.59,10.87L57.14,65.67z"/>
+	<path id="bottom-finger-hole" class="st1" d="M57.07,65.67l-9.5-5.38l-5.9,10.83c-2.35-1.08-5.04-1.69-7.9-1.69
+		c-9.11,0-16.5,6.21-16.5,13.86c0,7.66,7.39,13.86,16.5,13.86s16.5-6.21,16.5-13.86c0-0.98-0.12-1.93-0.35-2.85
+		C51.82,75.31,54.58,68.65,57.07,65.67z M33.9,92.04c-5.6,0-10.13-3.94-10.13-8.8s4.54-8.8,10.13-8.8c5.59,0,10.13,3.94,10.13,8.8
+		S39.49,92.04,33.9,92.04z"/>
+</g>
+</svg>
