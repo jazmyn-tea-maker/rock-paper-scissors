@@ -40,6 +40,17 @@ body {
     top: 283px;
 }
 
+.flag-2 {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 275px;
+    right: 0;
+    top: 283px;
+}
+
 .hide-flag-div {
     height: 170px;
     width: 100px;
@@ -103,17 +114,6 @@ body {
     width: auto;
     z-index: 1;
     position: absolute;
-}
-
-.flag-2 {
-    height: 150px;
-    width: 100px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 275px;
-    right: 0;
-    top: 283px;
 }
 
 #Robot {
@@ -189,7 +189,7 @@ body {
     left: 0;
     right: 0;
     top: 155px;
-    background-color:#701028;
+    background-color:#9b1536;
 }
 
 .bottom-bar {
@@ -201,7 +201,22 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
-    background-color: #3e0f64;
+    background-color: #289124;
+}
+
+.tile-style {
+    width: 120px;
+    height: 100px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.comp-tile-style {
+    background-color: rgb(241, 173, 190);
+}
+
+.user-tile-style {
+    background:rgb(150, 187, 152);
 }
 
 .robo-tile-div {
@@ -228,15 +243,8 @@ body {
     z-index: 4;
     left: 0;
     right: 0;
-    bottom: 31px;
+    bottom: 32px;
     justify-content: space-between;
-}
-
-.tile-style {
-    width: 120px;
-    height: 100px;
-    position: relative;
-    background-color: rgb(206, 168, 238);
 }
 
 .paper-tile {
