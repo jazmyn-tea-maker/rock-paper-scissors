@@ -1,3 +1,4 @@
+
 body {
     padding: 0;
     margin: 0;
@@ -27,93 +28,6 @@ body {
     z-index: 1;
     opacity: .75;
     background-color: #360626;
-}
-
-.flag-1 {
-    height: 150px;
-    width: 100px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 275px;
-    top: 283px;
-}
-
-.flag-2 {
-    height: 150px;
-    width: 100px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 275px;
-    right: 0;
-    top: 283px;
-}
-
-.hide-flag-div {
-    height: 170px;
-    width: 100px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    z-index:1;
-    left: 0;
-    right: 275px;
-    top: 115px;
-    background-color: #502749;
-}
-
-.hide-flag-div2 {
-    height: 170px;
-    width: 100px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    z-index:1;
-    left: 275px;
-    right: 0px;
-    top: 115px;
-    background-color: #502749;
-}
-
-.flag-svg {
-    height: 150px;
-    width: 100px;
-    position: relative;
-    z-index: 0;
-    animation-name: rollUp;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes  rollUp {
-    20% {
-        transform: translateY(10px);
-    }
-    30% {
-        transform: translateY(0px);
-    }
-    100% {
-        transform: translateY(-150px);
-    }
-}
-
-@keyframes rollDown {
-    0% {
-        transform: translateY(-150px);
-    }
-    100% {
-        
-    }
-}
-
-.flag-roll {
-    height: auto;
-    width: auto;
-    z-index: 1;
-    position: absolute;
 }
 
 #Robot {
@@ -204,6 +118,46 @@ body {
     background-color: #289124;
 }
 
+#score-counter-comp {
+    width: 100px;
+    height: 75px;
+    background-color: black;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 182px;
+    border-radius: 10px;
+}
+
+#score-counter-user {
+    width: 100px;
+    height: 75px;
+    background-color: black;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 45px;
+    border-radius: 10px;
+}
+
+@font-face {
+    font-family: Arcade;
+    src: url('Arcade-Classic.TTF');
+}
+
+.score-title {
+    color:chartreuse;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    font-size: 25px;
+    font-family: Arcade;
+}
+
 .tile-style {
     width: 120px;
     height: 100px;
@@ -247,7 +201,7 @@ body {
     justify-content: space-between;
 }
 
-.paper-tile {
+.paper-tile-style {
     width: 60px;
     height: auto;
 }

@@ -1,0 +1,86 @@
+.flag-1 {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 275px;
+    top: 283px;
+}
+
+.flag-2 {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 275px;
+    right: 0;
+    top: 283px;
+}
+
+.hide-flag-div {
+    height: 170px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:1;
+    left: 0;
+    right: 275px;
+    top: 115px;
+    background-color: #502749;
+}
+
+.hide-flag-div2 {
+    height: 170px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:1;
+    left: 275px;
+    right: 0px;
+    top: 115px;
+    background-color: #502749;
+}
+
+.flag-svg {
+    height: 150px;
+    width: 100px;
+    position: relative;
+    z-index: 0;
+    animation-name: rollUp;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* @keyframes  rollUp {
+    20% {
+        transform: translateY(10px);
+    }
+    30% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-150px);
+    }
+}
+
+@keyframes rollDown {
+    0% {
+        transform: translateY(-150px);
+    }
+    100% {
+        
+    }
+} */
+
+.flag-roll {
+    height: auto;
+    width: auto;
+    z-index: 1;
+    position: absolute;
+}

@@ -3,7 +3,30 @@
 <html>
     <script src='Javascript/rock-paper-scissors.js'></script>
 	<link rel='stylesheet' href='styles/main.css'>
-    <body>
+	<link rel='stylesheet' href='styles/tile-style-anim.css'>
+	<link rel='stylesheet' href='styles/flag-styles-anim.css'>
+	
+	<style>
+		@font-face {
+    		font-family: Arcade;
+    		src: url('Arcade-Classic.TTF');
+		}
+
+		.score-title {
+    		color:chartreuse;
+    		text-align: center;
+    		position: relative;
+    		bottom: 20px;
+    		font-size: 25px;
+    		font-family: Arcade;
+		}
+
+		.num-score-style {
+			bottom: 60px;
+			font-size: 40px;
+		}
+	</style>
+	<body>
 		<div class='game-bg'>
 			<div class='dark-columns'></div>
 			<div class='dark-columns'></div>
@@ -240,40 +263,53 @@
 		</svg>
 		<div class='top-bar'>
 		</div>
+
+		<div id='score-counter-comp'>
+			<h2 class='score-title'>SCORE:</h2>
+			<h2 id='comp-num-score' class='score-title num-score-style'>0</h2>
+		</div>
+
 		<div class='robo-tile-div'>
-			<div id='computer-rock-tile' class='tile-style comp-tile-style'>
+			<div id='comp-1-tile' class='tile-style comp-tile-style'>
 				<img src='images/rock-svg.svg'>
 			</div>
-			<div id='computer-paper-tile' class='tile-style comp-tile-style'>
-				<img class='paper-tile paper-left' src='images/paper-svg-left.svg'>
-				<img class='paper-tile paper-right' src='images/paper-svg-right.svg'>
+			<div id='comp-2-tile' class='tile-style comp-tile-style'>
+				<img class='paper-tile-style paper-left' src='images/paper-svg-left.svg'>
+				<img class='paper-tile-style paper-right' src='images/paper-svg-right.svg'>
 			</div>
-			<div id='computer-scissors-tile' class='tile-style comp-tile-style'>
+			<div id='comp-3-tile' class='tile-style comp-tile-style'>
 				<img class='scissors-bottom' src='images/scissors-bottom-svg.svg'>
 				<img class='scissors-top' src='images/scissors-top-svg.svg'>
 			</div>
 		</div>
 		<div class='hide-flag-div'>
 		</div>
+
 		<div class='flag-1'>
 			<img class='flag-roll' src='images/flag-roll.svg'>
 		<img class='flag-svg' src='images/flag.svg'>
 		</div>
 		<div class='hide-flag-div2'></div>
+		
 		<div class='flag-2'>
 			<img class='flag-roll' src='images/flag-roll.svg'>
 		<img class='flag-svg' src='images/flag.svg'>
 		</div>
 
+		<div id='score-counter-user'>
+			<h2 class='score-title'>SCORE:</h2>
+			<h2 id='user-num-score' class='score-title num-score-style'>0</h2>
+		</div>
+
 		<div class='user-tile-div'>
-			<div id='user-rock-tile' class='tile-style user-tile-style'>
+			<div id='user-1-tile' class='tile-style user-tile-style'>
 				<img src='images/rock-svg.svg'>
 			</div>
-			<div id='user-paper-tile' class='tile-style user-tile-style'>
-				<img class='paper-tile paper-left' src='images/paper-svg-left.svg'>
-				<img class='paper-tile paper-right' src='images/paper-svg-right.svg'>
+			<div id='user-2-tile' class='tile-style user-tile-style'>
+				<img class='paper-tile-style paper-left' src='images/paper-svg-left.svg'>
+				<img class='paper-tile-style paper-right' src='images/paper-svg-right.svg'>
 			</div>
-			<div id='user-scissors-tile' class='tile-style user-tile-style'>
+			<div id='user-3-tile' class='tile-style user-tile-style'>
 				<img class='scissors-bottom' src='images/scissors-bottom-svg.svg'>
 				<img class='scissors-top' src='images/scissors-top-svg.svg'>
 			</div>
