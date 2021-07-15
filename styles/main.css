@@ -225,6 +225,7 @@ body {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
+    z-index: 4;
     left: 0;
     right: 0;
     bottom: 31px;
@@ -238,16 +239,30 @@ body {
     background-color: rgb(206, 168, 238);
 }
 
-#computer-rock-tile {
-    
+.paper-tile {
+    width: 60px;
+    height: auto;
 }
 
-#computer-paper-tile {
-    
+.paper-left {
+    position: relative;
+    float: left;
 }
 
-#computer-scissors-tile {
-   
+.paper-right {
+    position: relative;
+    float: right;
+}
+
+.scissors-bottom {
+    position: relative;
+    z-index: 0;
+}
+
+.scissors-top {
+    position: relative;
+    z-index: 1;
+    bottom: 105px;
 }
 
 @media (max-height: 300px) {
