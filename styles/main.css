@@ -2,12 +2,14 @@
 body {
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgb(187, 150, 187);
 }
 
 .game-bg {
     width: 600px;
-    height: 100vh;
+    height: 580px;
     display: block;
     position: absolute;
     margin-left: auto;
@@ -22,7 +24,7 @@ body {
 
 .dark-columns {
     width: 100px;
-    height: 100vh;
+    height: 100%;
     display: block;
     position: relative;
     z-index: 1;
@@ -110,12 +112,12 @@ body {
     height: 15px;
     width:400px;
     position: absolute;
-    bottom: 17px;
+    bottom: 0%;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    background-color: #289124;
+    background-color: #24918c;
 }
 
 #score-counter-comp {
@@ -140,22 +142,8 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
-    bottom: 45px;
+    bottom: 5%;
     border-radius: 10px;
-}
-
-@font-face {
-    font-family: Arcade;
-    src: url('Arcade-Classic.TTF');
-}
-
-.score-title {
-    color:chartreuse;
-    text-align: center;
-    position: relative;
-    bottom: 20px;
-    font-size: 25px;
-    font-family: Arcade;
 }
 
 .tile-style {
@@ -170,7 +158,7 @@ body {
 }
 
 .user-tile-style {
-    background:rgb(150, 187, 152);
+    background:rgb(150, 187, 187);
 }
 
 .robo-tile-div {
@@ -197,7 +185,7 @@ body {
     z-index: 4;
     left: 0;
     right: 0;
-    bottom: 32px;
+    bottom: 2.6%;
     justify-content: space-between;
 }
 

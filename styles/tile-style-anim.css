@@ -7,16 +7,15 @@
 }
 
 #comp-3-tile {
-
+    transform: rotate(180deg);
 }
 
 #user-1-tile {
-
 }
 
 #user-2-tile {
+    transform: rotate(180deg);
 }
 
 #user-3-tile {
-    
 }
