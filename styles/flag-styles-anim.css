@@ -72,7 +72,7 @@
 }
 
 .flag-svg, .round-title, #round {
-    animation-name: rollDown;
+    animation-name: rollUp;
     animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
