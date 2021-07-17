@@ -1,48 +1,48 @@
-#comp-1-tile {
+/* #comp-1-tile {
    
-}
+} */
 
-#comp-2-tile {
+/* #comp-2-tile {
     animation-name: score-reveal-comp;
     animation-duration: .5s;
     animation-fill-mode: forwards;
     transform-origin: center;
-}
+} */
 
-#comp-3-tile {
+/* #comp-3-tile {
     
-}
+} */
 
 #user-1-tile {
-    animation-name: user-left-div-down;
+    animation-name: unset;
     animation-duration: .5s;
     animation-timing-function:ease-in;
     animation-fill-mode: forwards;
 }
 
 #user-2-tile {
-    animation-name: score-reveal-user;
+    animation-name: unset;
     animation-duration: .5s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
 
 #user-3-tile {
-    animation-name: user-right-div-down;
+    animation-name: unset;
     animation-duration: .5s;
     animation-timing-function:ease-in;
     animation-fill-mode: forwards;
 }
 
 #user-3-tile:hover, #user-2-tile:hover, #user-1-tile:hover {
-    animation-name: weeWoo;
-    animation-duration: 1s;
+    animation-name: unset;
+    animation-duration: .5s;
     animation-iteration-count: infinite;
 }
 
 @keyframes weeWoo {
     50% {
-        transform: scale(1.09);
+        transform: scale(1.05);
     }
 }
 

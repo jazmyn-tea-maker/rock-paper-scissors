@@ -1,3 +1,4 @@
+
 html {
     overflow: hidden;
 }
@@ -96,15 +97,13 @@ body {
 }
 
 .robo-cover-div {
+    width: 420px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    bottom: 303.5vh;
+    margin: auto;
     z-index: 5;
-    left: 141px;
-    right: 0;
-    top: -20px;
-    position: absolute;
-    animation-name: drop-down;
+    animation-name: unset;
     animation-duration: .5s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
@@ -112,6 +111,9 @@ body {
 
 .robo-cover {
     transform: scaleX(1.0499);
+    margin: auto;
+    display: block;
+    position: relative;
     height: 155px;
 }
 
@@ -150,16 +152,15 @@ body {
 .robo-bg {
     width: 420px;
     height: 160px;
+    position: absolute;
     background-color:rgb(224, 243, 54);
     display: block;
     margin-left: auto;
     margin-right: auto;
     z-index: 3;
-    left: 0px;
+    left: 0;
     right: 0;
     top: -20px;
-    position: absolute;
-
 }
 
 #left-arm, #right-arm {
@@ -242,7 +243,7 @@ body {
     display: block;
     position: relative;
     margin: auto;
-    bottom: 342.5vh;
+    bottom: 369.5vh;
     padding: 10px;
     border-radius: 10px;
     border-color: rgb(87, 80, 187);

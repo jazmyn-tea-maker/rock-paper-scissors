@@ -49,6 +49,7 @@
 .flag-svg {
     height: 150px;
     width: 100px;
+    bottom: 150px;
     position: relative;
     z-index: 0;
 }
@@ -59,7 +60,7 @@
     color: white;
     text-align: center;
     position: relative;
-    bottom: 140px;
+    bottom: 290px;
 }
 
 #round {
@@ -68,34 +69,37 @@
     color: white;
     text-align: center;
     position: relative;
-    bottom: 160px;
+    bottom: 310px;
 }
 
 .flag-svg, .round-title, #round {
-    animation-name: rollUp;
+    animation-name: unset;
     animation-duration: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 @keyframes  rollUp {
+    0% {
+        transform: translateY(150px);
+    }
     20% {
-        transform: translateY(10px);
+        transform: translateY(160px);
     }
     30% {
-        transform: translateY(0px);
+        transform: translateY(150px);
     }
     100% {
-        transform: translateY(-150px);
+        transform: translateY(-300px);
     }
 }
 
 @keyframes rollDown {
     0% {
-        transform: translateY(-150px);
+        transform: translateY(0px);
     }
     100% {
-        
+        transform: translateY(150px);
     }
 }
 
