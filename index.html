@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-    <script src='Javascript/rock-paper-scissors.js'></script>
 	<link rel='stylesheet' href='styles/main.css'>
 	<link rel='stylesheet' href='styles/tile-style-anim.css'>
 	<link rel='stylesheet' href='styles/flag-styles-anim.css'>
@@ -54,6 +53,7 @@
         <?xml version="1.0" encoding="utf-8"?>
 		<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 		<!-- Learned my lesson, will be doing svgs by linking the actual file. Because this is TRIFLING. -->
+		
 		<div class='robo-bg'>
 			<svg version="1.1" id="Robot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 5293.24 1671.04" style="enable-background:new 0 0 5293.24 1671.04;" xml:space="preserve">
@@ -294,16 +294,16 @@
 		</div>
 
 		<div class='robo-tile-div'>
-			<div id='comp-1-tile' class='tile-style comp-tile-style'>
+			<div id='comp-1-tile' class='tile-style comp-tile-style comp-rock'>
 				<img src='images/rock-svg.svg'>
 			</div>
 			<div id='comp-2-tile' class='tile-style comp-tile-style'>
-				<img class='paper-tile-style paper-left' src='images/paper-svg-left.svg'>
-				<img class='paper-tile-style paper-right' src='images/paper-svg-right.svg'>
+				<img class='comp-paper paper-tile-style paper-left' src='images/paper-svg-left.svg'>
+				<img class='comp-paper paper-tile-style paper-right' src='images/paper-svg-right.svg'>
 			</div>
 			<div id='comp-3-tile' class='tile-style comp-tile-style'>
-				<img class='scissors-bottom' src='images/scissors-bottom.svg'>
-				<img class='scissors-top' src='images/scissors-top.svg'>
+				<img class='scissors-bottom comp-scissors' src='images/scissors-bottom.svg'>
+				<img class='scissors-top comp-scissors' src='images/scissors-top.svg'>
 			</div>
 		</div>
 		<div class='hide-flag-div'>
@@ -345,6 +345,6 @@
 			</div>
 		</div>
 		<div class='bottom-bar'></div>
-		
     </body>
+	<script src='Javascript/rock-paper-scissors.js'></script>
 </html>

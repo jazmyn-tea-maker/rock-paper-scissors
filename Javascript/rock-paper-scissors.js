@@ -2,8 +2,9 @@ let playerSelect;
 let computerSelect;
 let playerWins = 0; //Connect to the counter.
 let computerWins = 0; //Connect to the counter.
+let compNum = document.getElementById('comp-num-score');
+let userNum = document.getElementById('user-num-score');
 let round = 0;
-
 
 
 //Chooses a random choice from an array as 
@@ -55,13 +56,14 @@ let commenceDuel = () => {
             //Run no animation for the robot.
             
         } else if (playerSelect == 'rock' && computerSelect == 'scissors' || playerSelect == 'paper' && computerSelect == 'rock' || playerSelect == 'scissors' && computerSelect == 'paper') {
-            playerWins++; 
+            playerWins++;
+             
             //Run a trumped-bot anim.
             
         } else if (playerSelect == 'scissors' && computerSelect == 'rock' || playerSelect == 'rock' && computerSelect == 'paper' || playerSelect == 'paper' && computerSelect == 'scissors') {
             computerWins++;
             //Run a smug bot animation.
-
+            compNum.innerHTML = computerWins;
         }
         round++; //Repeatedly adds on the next round.
     }

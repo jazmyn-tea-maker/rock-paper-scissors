@@ -117,7 +117,7 @@ body {
     z-index: 3;
     left: 0px;
     right: 0;
-    top: 0px;
+    top: -20px;
     position: absolute;
 
 }
@@ -181,7 +181,7 @@ body {
     z-index: 3;
     left: 0;
     right: 0;
-    top: 155px;
+    top: 135px;
     background-color:#9b1536;
 }
 
@@ -202,7 +202,7 @@ body {
     display: block;
     position: relative;
     margin: auto;
-    bottom: 340vh;
+    bottom: 342.5vh;
     padding: 10px;
     border-radius: 10px;
     border-color: rgb(87, 80, 187);
@@ -227,7 +227,7 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 182px;
+    top: 162px;
     border-radius: 10px;
 }
 
@@ -264,7 +264,7 @@ body {
     width: 400px;
     display: flex;
     position: absolute;
-    top: 170px;
+    top: 150px;
     margin-left: auto;
     margin-right: auto;
     z-index: 2;
@@ -295,12 +295,22 @@ body {
 
 .paper-left {
     position: relative;
-    float: left;
 }
 
 .paper-right {
     position: absolute;
-    float: right;
+}
+
+.comp-paper {
+    transform: scaleY(-1);
+}
+
+.comp-rock {
+    transform: scaleX(-1);
+}
+
+.comp-scissors {
+    transform: rotate(180deg);
 }
 
 .scissors-bottom {

@@ -1,25 +1,38 @@
 #comp-1-tile {
-    transform: scaleX(-1);
+   
 }
 
 #comp-2-tile {
-    transform: scale(-1);
+    animation-name: score-reveal-comp;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    transform-origin: center;
 }
 
 #comp-3-tile {
-    transform: rotate(180deg);
+    
 }
 
-/* #user-1-tile {
+#user-1-tile {
+    animation-name: user-left-div-down;
+    animation-duration: .5s;
+    animation-timing-function:ease-in;
+    animation-fill-mode: forwards;
+}
 
-} */
+#user-2-tile {
+    animation-name: score-reveal-user;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
 
-/* #user-2-tile {
-
-} */
-
-/* #user-3-tile {
-} */
+#user-3-tile {
+    animation-name: user-right-div-down;
+    animation-duration: .5s;
+    animation-timing-function:ease-in;
+    animation-fill-mode: forwards;
+}
 
 #user-3-tile:hover, #user-2-tile:hover, #user-1-tile:hover {
     animation-name: weeWoo;
@@ -32,3 +45,83 @@
         transform: scale(1.09);
     }
 }
+
+@keyframes score-reveal-comp {
+    100% {
+        transform: translateY(18vh);
+    }
+    
+}
+
+@keyframes score-reveal-user {
+    100% {
+        transform: translateY(-18vh);
+    }
+    
+}
+
+@keyframes score-cover-user {
+    0% {
+        transform: translateY(-15vh);
+    }
+    100% {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes user-middle-div-right {
+    0% {
+        transform: translateY(-15vh);
+    }
+    50% {
+        transform: translateY(0vh);
+    }
+    100% {
+        transform: translateX(20vw)
+    }
+}
+
+@keyframes user-middle-div-left {
+    0% {
+        transform: translateY(-15vh);
+    }
+    50% {
+        transform: translateY(0vh);
+    }
+    100% {
+        transform: translateX(-20vw)
+    }
+}
+
+@keyframes user-right-div-up {
+    100% {
+        transform: translate(-20.5vw, -18vh);
+    }
+}
+
+@keyframes user-right-div-down {
+    0% {
+        transform: translate(-20.5vw, -18vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes user-left-div-up {
+    100% {
+        transform: translate(20.5vw, -18vh);
+    }
+}
+
+@keyframes user-left-div-down {
+    0% {
+        transform: translate(20.5vw, -18vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+
