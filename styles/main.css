@@ -5,42 +5,121 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(187, 150, 187);
+    background-color: rgb(190, 137, 173);
+
+}
+
+.moving-bg-1 {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    z-index: -1;
+    animation-name: body-shift;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+}
+
+@keyframes body-shift {
+    0% {
+        transform: translate(-100vw);
+    }
+    100% {
+        transform: translate(50vw);
+    }
+}
+
+.moving-bg-2 {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    left: 100vw;
+    bottom: 100vh;
+    display: flex;
+    z-index: -2;
+    animation-name: body-shift2;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+}
+
+@keyframes body-shift2 {
+    0% {
+        transform: translate(-100vw);
+    }
+    100% {
+        transform: translate(50vw);
+    }
+}
+
+.moving-bg-3 {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    bottom: 200vh;
+    right: 100vw;
+    display: flex;
+    z-index: -2;
+    animation-name: body-shift3;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+}
+
+@keyframes body-shift3 {
+    0% {
+        transform: translate(-100vw);
+    }
+    100% {
+        transform: translate(50vw);
+    }
+}
+
+.window-bg-div {
+    display: block;
+    opacity: .2;
+    width: 100vw;
+    height: 100vh;
+    background: url('/images/rps-bg-overlay-01.svg') repeat;
 }
 
 .game-bg {
-    width: 600px;
+    width: 420px;
     height: 100vh;
-    display:block;
     position: relative;
     margin: auto;
+    bottom: 302vh;
     display: flex;
     justify-content: space-between;
     z-index: 0;
     background-color: #502749;
 }
 
-.dark-columns {
-    width: 100px;
-    height: 100%;
-    display: block;
-    position: relative;
-    z-index: 10;
-    opacity: .75;
-    background-color: #360626;
-}
 
 #Robot {
     height: 150px;
     width: auto;
     display: block;
+    z-index: 3;
+    margin: auto;
+    right: 27px;
+    top: 11px;
+    position: relative;
+}
+
+.robo-bg {
+    width: 420px;
+    height: 160px;
+    background-color:rgb(224, 243, 54);
+    display: block;
     margin-left: auto;
     margin-right: auto;
     z-index: 3;
-    left: 3px;
+    left: 0px;
     right: 0;
-    top: 10px;
+    top: 0px;
     position: absolute;
+
 }
 
 #left-arm, #right-arm {
@@ -79,7 +158,7 @@ body {
     50% {
         transform: rotate(5deg);
     }
-}  
+}
 
 #robo-head, #head-antennae{
     animation-name: bounce;
@@ -95,7 +174,7 @@ body {
 
 .top-bar {
     height: 15px;
-    width:400px;
+    width:420px;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -108,7 +187,7 @@ body {
 
 .bottom-bar {
     height: 15px;
-    width:400px;
+    width:420px;
     position: absolute;
     bottom: -.1%;
     margin-left: auto;
@@ -123,7 +202,7 @@ body {
     display: block;
     position: relative;
     margin: auto;
-    bottom: 40vh;
+    bottom: 340vh;
     padding: 10px;
     border-radius: 10px;
     border-color: rgb(87, 80, 187);
@@ -131,13 +210,12 @@ body {
     background-color: rgb(87, 80, 187);
     font-family: 'Oswald';
     font-size: 20px;
-    animation-name: weeWoo;
-    animation-duration: .6s;
-    animation-iteration-count: infinite;
 }
 
 #play-button:hover {
-    animation: unset;
+    animation-name: weeWoo;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
 }
 
 #score-counter-comp {
@@ -251,26 +329,8 @@ body {
     }
 }
 
-@media (max-width: 600px) {
-    .game-bg {
-        width: 100%;
-    }
+@media (max-width: 420px) {
     #Robot {
         left: -17px;
-    }
-    .dark-columns {
-        width: 15%;
-    }
-}
-
-@media (max-width: 547px) {
-    .dark-columns {
-        width: 10%;
-    }
-}
-
-@media (max-width: 451px) {
-    .dark-columns {
-        width: 5%;
     }
 }

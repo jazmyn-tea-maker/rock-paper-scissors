@@ -1,8 +1,8 @@
 let playerSelect;
 let computerSelect;
-let playerWins = 0;
-let computerWins = 0;
-let round = 1;
+let playerWins = 0; //Connect to the counter.
+let computerWins = 0; //Connect to the counter.
+let round = 0;
 
 
 
@@ -15,66 +15,58 @@ let computerPlay = () => {
     return computerSelect;
 };
 
-//Prompts user. Uses choice to store in playerSelect.
-//Changes the answer to fit the format, all lowercase
-//and no special symbols.
-let userPlay = () => {
-    let option = prompt(`Hello! This is a five round game. 
-    Whoever wins will be named supreme leader! Round ${round} 
-    Rock, Paper, or Scissors? (May the odds be in your favor!)`, '');
-    option = option.toLowerCase().replace(/[^\w\s]/gi, '');
-    playerSelect = option;
-    return playerSelect;
-};
+//Function that takes the value of whichever div they clicked on and puts it
+//in playerSelect.
 
 //Explanatory. Takes values of win counts to determine
-//who will be declared (alerted) as winner.
-let winnerDeclaration = () => {
-    (playerWins == computerWins) ? alert('Wow, what are the odds! You\'ve tied!') :
-    (playerWins > computerWins) ? alert(`You, player, are now named SUPREME LEADER, with a score of ${playerWins} rounds out of 5!`) : 
-    alert(`The computer is now named SUPREME LEADER! Though it could actually care less. It won ${computerWins} rounds out of 5.`);
-    playerWins = 0;
-    computerWins = 0;
-}
+//who will be declared winner.
+//Fix it to show certain animations: Winner robot with crown, loser robot disappointed.
+//Also create a UI box that will pop up. Instead of using confirm.
 
-//Confirm display box used to prompt user to continue (true/OK button)
-//or to not. (false/Cancel button)
-let playAgain = () => {
-    winnerDeclaration();
-    if (confirm('Would you like to play again?')) {
-        alert('Game on!');
-        commenceDuel(); 
-    } {
-        alert('Good game!');
-    }
+
+// let winnerDeclaration = () => {
+//     (playerWins == computerWins) ?
+//     (playerWins > computerWins) ?  
+//     playerWins = 0;
+//     computerWins = 0;
+// }
+
+//Needs to be Good game in a text node if user clicks no on new UI box, and game on, with a 'Let's
+//go!' button that can be clicked.
+
+//This should open the custom dialog box. ^^^ and do that.
+// let playAgain = () => {
+//     winnerDeclaration();
+//     if ();
+//         commenceDuel(); 
+//     } {
+//         h2.innerHTML = 'Good game.';
+//     }
         
-};
+// };
 
 let commenceDuel = () => {
-    //Ends the game at the 5th round.
-    while (round <= 5) {
+    //First to five wins, wins.
+    round = 1;
+    while (playerWins < 5 && computerWins < 5) {
         computerPlay(); //A choice must be set for the computer.
-        userPlay(); //A choice must be set by the user.
+        userPlay(); //A choice must be clicked by the user.
         if (playerSelect == computerSelect) {
-            alert('It\'s a tie! Good luck next time.'); 
+            //Run no animation for the robot.
             
         } else if (playerSelect == 'rock' && computerSelect == 'scissors' || playerSelect == 'paper' && computerSelect == 'rock' || playerSelect == 'scissors' && computerSelect == 'paper') {
-            playerWins++; //Adds to playerWins.
-            alert(`You are the victor! The computer chose ${computerSelect}`);
+            playerWins++; 
+            //Run a trumped-bot anim.
             
         } else if (playerSelect == 'scissors' && computerSelect == 'rock' || playerSelect == 'rock' && computerSelect == 'paper' || playerSelect == 'paper' && computerSelect == 'scissors') {
-            computerWins++; //Adds to compWins
-            alert(`You\'ve been trounced! The computer chose ${computerSelect}! Better luck next time.`);
-
-        } else {
-            alert('Okay, I\'m quite sure that isn\'t in the options...Computer wins because they actually read directions!');
             computerWins++;
+            //Run a smug bot animation.
 
         }
         round++; //Repeatedly adds on the next round.
     }
-    console.log('Player: '+playerWins, 'Computer: '+computerWins);
-    round = 1; //reset
+    console.log('Player: '+playerWins, 'Computer: '+computerWins); // Kept for debugging.
+    round = 0; //reset
     playAgain();
 }
 

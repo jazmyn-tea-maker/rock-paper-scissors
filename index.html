@@ -5,6 +5,7 @@
 	<link rel='stylesheet' href='styles/main.css'>
 	<link rel='stylesheet' href='styles/tile-style-anim.css'>
 	<link rel='stylesheet' href='styles/flag-styles-anim.css'>
+	<link rel='stylesheet' href='styles/big-daddy-div2-anim.css'>
 	
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');		
@@ -29,13 +30,32 @@
 		}
 	</style>
 	<body>
-		<div class='game-bg'>
-			<div class='dark-columns'></div>
-			<div class='dark-columns'></div>
+		<div class='moving-bg-1'>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
 		</div>
+	
+		<div class='moving-bg-2'>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+		</div>
+
+		<div class='moving-bg-3'>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+			<div class='window-bg-div'></div>
+		</div>	
+		
         <?xml version="1.0" encoding="utf-8"?>
 		<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-		<svg version="1.1" id="Robot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		<!-- Learned my lesson, will be doing svgs by linking the actual file. Because this is TRIFLING. -->
+		<div class='robo-bg'>
+			<svg version="1.1" id="Robot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 5293.24 1671.04" style="enable-background:new 0 0 5293.24 1671.04;" xml:space="preserve">
 		<style type="text/css">
 			.st0{fill:#75846E;}
@@ -262,10 +282,12 @@
 			<circle class="st23" cx="2930.82" cy="1068.99" r="94.63"/>
 			<circle class="st24" cx="2930.82" cy="1068.99" r="57.74"/>
 		</g>
-		</svg>
+			</svg>
+		</div>
 		<div class='top-bar'>
 		</div>
-
+		<div class='game-bg'>
+		</div>
 		<div id='score-counter-comp'>
 			<h2 class='score-title'>SCORE:</h2>
 			<h2 id='comp-num-score' class='score-title num-score-style'>0</h2>
@@ -323,5 +345,6 @@
 			</div>
 		</div>
 		<div class='bottom-bar'></div>
+		
     </body>
 </html>
