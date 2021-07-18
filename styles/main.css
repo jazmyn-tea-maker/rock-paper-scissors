@@ -96,7 +96,7 @@ body {
     background-color: #502749;
 }
 
-.robo-cover-div {
+#robo-cover-div {
     width: 420px;
     display: block;
     position: relative;
@@ -251,6 +251,7 @@ body {
     background-color: rgb(87, 80, 187);
     font-family: 'Oswald';
     font-size: 20px;
+    animation-fill-mode: forwards;
 }
 
 #play-button:hover {

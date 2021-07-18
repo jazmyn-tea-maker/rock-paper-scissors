@@ -4,6 +4,23 @@ let playerWins = 0; //Connect to the counter.
 let computerWins = 0; //Connect to the counter.
 let compNum = document.getElementById('comp-num-score');
 let userNum = document.getElementById('user-num-score');
+let playBtn = document.getElementById('play-button');
+let robotCover = document.getElementById('robo-cover-div');
+let flag = document.getElementsByClassName('flag-svg').item(0);
+let flag2 = document.getElementsByClassName('flag-svg').item(1);
+let roundTitle = document.getElementsByClassName('round-title').item(0);
+let roundTitle2 = document.getElementsByClassName('round-title').item(1);
+let roundCount = document.getElementsByClassName('round').item(0);
+let roundCount2 = document.getElementsByClassName('round').item(1);
+
+playBtn.addEventListener('click', function(e) {
+    robotCover.style['animation-name'] = 'pull-up';
+    let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
+    for (const element of animArr) {
+        element.style['animation-name'] = 'rollDown';
+    }
+    e.target.classList.add('animate__bounceOut').style['animation-fill-mode'] = 'forwards';
+})
 let round = 0;
 
 
