@@ -254,8 +254,29 @@ body {
     animation-fill-mode: forwards;
 }
 
+#play-again-button {
+    display: none;
+    position: relative;
+    margin: auto;
+    bottom: 378.5vh;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(87, 80, 187);
+    color: white;
+    background-color: rgb(87, 80, 187);
+    font-family: 'Oswald';
+    font-size: 20px;
+    animation-fill-mode: forwards;
+}
+
 #play-button[weeWoo]:hover {
     animation-name: weeWoo;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+}
+
+#play-again-button[weeWoo2]:hover {
+    animation-name: weeWoo2;
     animation-duration: .6s;
     animation-iteration-count: infinite;
 }

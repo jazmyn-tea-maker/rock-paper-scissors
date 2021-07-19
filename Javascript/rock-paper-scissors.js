@@ -6,6 +6,7 @@ let round = 1;
 let compNum = document.getElementById('comp-num-score');
 let userNum = document.getElementById('user-num-score');
 let playBtn = document.getElementById('play-button');
+let playAgainBtn = document.getElementById('play-again-button');
 let robotCover = document.getElementById('robo-cover-div');
 let flag = document.getElementsByClassName('flag-svg').item(0);
 let flag2 = document.getElementsByClassName('flag-svg').item(1);
@@ -21,6 +22,7 @@ let userTile2 = document.getElementById('user-2-tile');
 let userTile3 = document.getElementById('user-3-tile');
 
 playBtn.setAttribute('weeWoo', '1'); //Adds hovering animation.
+playAgainBtn.setAttribute('weeWoo2', '1');
 
 
 
@@ -126,6 +128,9 @@ let gameEndAnim = () => {
     robotCover.style['animation-name'] = 'drop-down';
     userTile2.style['animation-name'] = 'score-cover-user';
     compTile2.style['animation-name'] = 'score-cover-comp';
+    playAgainBtn.style.display = 'block';
+    userNum.innerHTML = 0;
+    compNum.innerHTML = 0;
     settleEndGameAnim();
     rollUpFlags();
     roundCount.innerHTML = 1; //reset
@@ -249,13 +254,6 @@ let duel = () => {
 //go!' button that can be clicked.
 
 //This should open the custom dialog box. ^^^ and do that.
-let playAgain = () => {
-    winnerDeclaration();
-    if (true) {
-
-    }
-
-};
 
 
 
@@ -265,8 +263,25 @@ let playBtnAnim = () => {
     playBtn.style['animation-fill-mode'] = 'forwards';
 }
 
+let playAgainBtnAnim = () => {
+    playAgainBtn.removeAttribute('weeWoo2'); //Removes hovering animation, so that the button disappears.
+    playAgainBtn.classList.add('animate__bounceOut')
+    playAgainBtn.style['animation-fill-mode'] = 'forwards';
+}
 
-playBtn.addEventListener('click', function (e) {
+playAgainBtn.addEventListener('click', function() {
+    robotCover.style['animation-name'] = 'pull-up';
+    let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
+    for (const element of animArr) {
+        element.style['animation-name'] = 'rollDown';
+    }
+    compTile2.style['animation-name'] = 'score-reveal-comp';
+    userTile2.style['animation-name'] = 'score-reveal-user';
+    playAgainBtnAnim();
+    duel();
+})
+
+playBtn.addEventListener('click', function () {
     robotCover.style['animation-name'] = 'pull-up';
     let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
     for (const element of animArr) {
