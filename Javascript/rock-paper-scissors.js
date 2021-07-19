@@ -147,6 +147,7 @@ let gameEndAnim = () => {
     roundCount.innerHTML = round; //reset
     roundCount2.innerHTML = round; //reset
     console.log(`User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
+    alert(`For this session... User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
 }
 
 
@@ -250,7 +251,7 @@ let winnerDeclaration = () => {
         userTile3.removeEventListener('click', match3);
         return;
     } else if (computerWins == 5) {
-        alert('Robot Wins Game!');
+        alert('Robot player Wins Game!');
         compTotalGamesWon++;
         gameEndAnim();
         userTile1.removeEventListener('click', match1);
