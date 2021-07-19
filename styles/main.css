@@ -393,6 +393,12 @@ body {
     }
 }
 
+@keyframes weeWoo2 {
+    50% {
+        transform: scale(1.09);
+    }
+}
+
 @media (max-height: 300px) {
     .user-tile-div {
         display: none;

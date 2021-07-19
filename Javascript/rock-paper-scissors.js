@@ -25,8 +25,6 @@ playBtn.setAttribute('weeWoo', '1'); //Adds hovering animation.
 playAgainBtn.setAttribute('weeWoo2', '1');
 
 
-
-
 let rollUpFlags = () => {
     if (true) {
         let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
@@ -128,9 +126,11 @@ let gameEndAnim = () => {
     robotCover.style['animation-name'] = 'drop-down';
     userTile2.style['animation-name'] = 'score-cover-user';
     compTile2.style['animation-name'] = 'score-cover-comp';
-    playAgainBtn.style.display = 'block';
+    playAgainBtn.style.display = 'block'; //Show PlayAgain Btn
     userNum.innerHTML = 0;
     compNum.innerHTML = 0;
+    playerWins = 0;
+    computerWins = 0;
     settleEndGameAnim();
     rollUpFlags();
     roundCount.innerHTML = 1; //reset
@@ -138,18 +138,7 @@ let gameEndAnim = () => {
 }
 
 
-let winnerDeclaration = () => {
-    if (playerWins == 5) {
-        alert('Human player Wins Game!');
-        gameEndAnim();
-        return;
-    } else if (computerWins == 5) {
-        alert('Robot Wins Game!');
-        gameEndAnim();
-        return;
-    }
-    
-};
+
 
 
 //Playing animations:
@@ -176,79 +165,102 @@ let computerPlay = () => {
     return computerSelect;
 };
 
-//Similar to computerPlay() but with click events.
+//Match begins!
 
-let duel = () => {
-    userTile1.addEventListener('click', function () {
-        playerSelect = 1;
-        userTile1.style['animation-name'] = 'user-left-div-up';
-        userTile2.style['animation-name'] = 'score-cover-user';
-        computerPlay();
-        if (computerSelect == 2) {
-            alert('Computer Wins!');
-            computerWins++;
-            compNum.innerHTML = computerWins;
-        } else if (computerSelect == 3) {
-            alert('Player Wins!');
-            playerWins++;
-            userNum.innerHTML = playerWins;
-        } else {
-            alert('Tie!');
-        }
-        if (playerWins == 5 || computerWins == 5) {
-            winnerDeclaration();
-            return;
-        }
-        nextFlagNeededExecution();
-    })
-
-    userTile2.addEventListener('click', function () {
-        playerSelect = 2;
-        computerPlay();
-        if (computerSelect == 3) {
-            alert('Computer Wins!');
-            computerWins++;
-            compNum.innerHTML = computerWins;
-        } else if (computerSelect == 1) {
-            alert('Player Wins!');
-            playerWins++;
-            userNum.innerHTML = playerWins;
-        } else {
-            alert('Tie!');
-        }
-        if (playerWins == 5 || computerWins == 5) {
-            winnerDeclaration();
-            return;
-        }
-        //Nothing, it's already paper.
-        nextFlagNeededExecution();
-    })
-
-    userTile3.addEventListener('click', function () {
-        playerSelect = 3;
-        userTile3.style['animation-name'] = 'user-right-div-up';
-        userTile2.style['animation-name'] = 'score-cover-user';
-        computerPlay(); 
-        if (computerSelect == 1) {
-            alert('Computer Wins!');
-            computerWins++;
-            compNum.innerHTML = computerWins;
-        } else if (computerSelect == 2) {
-            alert('Player Wins!');
-            playerWins++;
-            userNum.innerHTML = playerWins;
-        } else {
-            alert('Tie!');
-        }
-        if (playerWins == 5 || computerWins == 5) {
-            winnerDeclaration();
-            return;
-        }
-        nextFlagNeededExecution();
-    })
+let match1 = () => {
+    playerSelect = 1;
+    userTile1.style['animation-name'] = 'user-left-div-up';
+    userTile2.style['animation-name'] = 'score-cover-user';
+    computerPlay();
+    if (computerSelect == 2) {
+        alert('Computer Wins!');
+        computerWins++;
+        compNum.innerHTML = computerWins;
+    } else if (computerSelect == 3) {
+        alert('Player Wins!');
+        playerWins++;
+        userNum.innerHTML = playerWins;
+    } else {
+        alert('Tie!');
+    }
+    if (playerWins == 5 || computerWins == 5) {
+        winnerDeclaration();
+        return;
+    }
+    nextFlagNeededExecution();
 }
 
+let match2 = () => {
+    playerSelect = 2;
+    computerPlay();
+    if (computerSelect == 3) {
+        alert('Computer Wins!');
+        computerWins++;
+        compNum.innerHTML = computerWins;
+    } else if (computerSelect == 1) {
+        alert('Player Wins!');
+        playerWins++;
+        userNum.innerHTML = playerWins;
+    } else {
+        alert('Tie!');
+    }
+    if (playerWins == 5 || computerWins == 5) {
+        winnerDeclaration();
+        return;
+    }
+    //Nothing, it's already paper.
+    nextFlagNeededExecution();
+}
 
+let match3 = () => {
+    playerSelect = 3;
+    userTile3.style['animation-name'] = 'user-right-div-up';
+    userTile2.style['animation-name'] = 'score-cover-user';
+    computerPlay(); 
+    if (computerSelect == 1) {
+        alert('Computer Wins!');
+        computerWins++;
+        compNum.innerHTML = computerWins;
+    } else if (computerSelect == 2) {
+        alert('Player Wins!');
+        playerWins++;
+        userNum.innerHTML = playerWins;
+    } else {
+        alert('Tie!');
+    }
+    if (playerWins == 5 || computerWins == 5) {
+        winnerDeclaration();
+        return;
+    }
+    nextFlagNeededExecution();
+}
+
+let duel = () => {
+    userTile1.addEventListener('click', match1);
+
+    userTile2.addEventListener('click', match2);
+
+    userTile3.addEventListener('click', match3);
+}
+
+let winnerDeclaration = () => {
+    if (playerWins == 5) {
+        alert('Human player Wins Game!');
+        gameEndAnim();
+        userTile1.removeEventListener('click', match1); //So the tiles aren't clickable between games.
+        userTile2.removeEventListener('click', match2);
+        userTile3.removeEventListener('click', match3);
+        return;
+    } else if (computerWins == 5) {
+        alert('Robot Wins Game!');
+        gameEndAnim();
+        userTile1.removeEventListener('click', match1);
+        userTile2.removeEventListener('click', match2);
+        userTile3.removeEventListener('click', match3);
+        return;
+    }
+    
+};
 
 //Needs to be Good game in a text node if user clicks no on new UI box, and game on, with a 'Let's
 //go!' button that can be clicked.
@@ -258,7 +270,6 @@ let duel = () => {
 
 
 let playBtnAnim = () => {
-    playBtn.removeAttribute('weeWoo'); //Removes hovering animation, so that the button disappears.
     playBtn.classList.add('animate__bounceOut')
     playBtn.style['animation-fill-mode'] = 'forwards';
 }
