@@ -58,6 +58,16 @@ let nextRoundFlags = () => {
     
 }
 
+let nextFlagNeededExecution = () => {
+    if (playerSelect == 0) {
+        playerSelect;
+    } else {
+        setTimeout(nextRoundFlags, 200);
+        settlingBetweenRoundUser();
+        settlingBetweenRoundComp();
+    }
+}
+
 let numBetween1And3 = () => {
     let num = Math.floor(Math.random() * 4);
     num == 0 ? num += 1 : num;
@@ -101,7 +111,7 @@ let settlingBetweenRoundUser = () => {
 //and 3. Used to choose for the computer. Stored in 
 //computerSelect.
 let computerPlay = () => {
-    let computerSelect = numBetween1And3();
+    computerSelect = numBetween1And3();
     if (computerSelect == 1) {
         console.log(1)
         compTile1.style['animation-name'] = 'comp-left-div-up';
@@ -127,43 +137,35 @@ let userPlay = () => {
         userTile2.style['animation-name'] = 'score-cover-user';
         computerPlay();
         if (computerSelect == 2) {
+            alert('Computer Wins!');
             computerWins++;
             compNum.innerHTML = computerWins;
         } else if (computerSelect == 3) {
+            alert('Player Wins!');
             playerWins++;
             userNum.innerHTML = playerWins;
         } else {
             alert('Tie!');
         }
-        if (playerSelect == 0) {
-            playerSelect;
-        } else {
-            setTimeout(nextRoundFlags, 200);
-            settlingBetweenRoundUser();
-            settlingBetweenRoundComp();
-        }
+        nextFlagNeededExecution();
     })
 
     userTile2.addEventListener('click', function () {
         playerSelect = 2;
         computerPlay();
         if (computerSelect == 3) {
+            alert('Computer Wins!');
             computerWins++;
             compNum.innerHTML = computerWins;
         } else if (computerSelect == 1) {
+            alert('Player Wins!');
             playerWins++;
             userNum.innerHTML = playerWins;
         } else {
             alert('Tie!');
         }
         //Nothing, it's already paper.
-        if (playerSelect == 0) {
-            playerSelect;
-        } else {
-            setTimeout(nextRoundFlags, 200);
-            settlingBetweenRoundUser();
-            settlingBetweenRoundComp();
-        }
+        nextFlagNeededExecution();
     })
 
     userTile3.addEventListener('click', function () {
@@ -172,22 +174,19 @@ let userPlay = () => {
         userTile2.style['animation-name'] = 'score-cover-user';
         computerPlay(); 
         if (computerSelect == 1) {
+            alert('Computer Wins!');
             computerWins++;
             compNum.innerHTML = computerWins;
         } else if (computerSelect == 2) {
+            alert('Player Wins!');
             playerWins++;
             userNum.innerHTML = playerWins;
         } else {
             alert('Tie!');
         }
-        if (playerSelect == 0) {
-            playerSelect;
-        } else {
-            setTimeout(nextRoundFlags, 200);
-            settlingBetweenRoundUser();
-            settlingBetweenRoundComp();
-        }
+        nextFlagNeededExecution();
     })
+
     
 }
 
@@ -210,35 +209,15 @@ let playAgain = () => {
     if (true) {
 
     }
-    commenceDuel();
 
 };
 
-let commenceDuel = () => {
-    //First to five wins, wins.
-    while (playerWins < 5 && computerWins < 5) {
-        if (playerSelect == computerSelect) {
-            //Run no animation for the robot.
-        } else if (playerSelect == 1 && computerSelect == 3 || playerSelect == 2 && computerSelect == 1 || playerSelect == 3 && computerSelect == 2) {
-            playerWins++;
-            userNum.innerHTML = playerWins;
-
-        } else if (playerSelect == 3 && computerSelect == 1 || playerSelect == 1 && computerSelect == 2 || playerSelect == 2 && computerSelect == 3) {
-            computerWins++;
-            compNum.innerHTML = computerWins;
-        }
-        setTimeout(nextRoundFlags, 1500);
-    }
-    if (playerWins == 5 || computerWins == 5) {
-        winnerDeclaration();
-    }
-    robotCover.style['animation-name'] = 'drop-down';
-    userTile2.style['animation-name'] = 'score-cover-user';
-    compTile2.style['animation-name'] = 'score-cover-comp';
-    rollUpFlags();
-    roundCount.innerHTML = 1; //reset
-    roundCount2.innerHTML = 1; //reset
-}
+    // robotCover.style['animation-name'] = 'drop-down';
+    // userTile2.style['animation-name'] = 'score-cover-user';
+    // compTile2.style['animation-name'] = 'score-cover-comp';
+    // rollUpFlags();
+    // roundCount.innerHTML = 1; //reset
+    // roundCount2.innerHTML = 1; //reset
 
 let playBtnAnim = () => {
     playBtn.removeAttribute('weeWoo'); //Removes hovering animation, so that the button disappears.
