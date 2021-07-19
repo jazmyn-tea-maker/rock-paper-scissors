@@ -1,7 +1,7 @@
 
-/* html {
+html {
     overflow: hidden;
-} */
+}
 
 body {
     padding: 0;
@@ -11,8 +11,9 @@ body {
 }
 
 .moving-bg-1 {
+    position: relative;
     width: 100vw;
-    height: auto;
+    left: 100vw;
     display: flex;
     z-index: -1;
     animation-name: body-shift;
@@ -33,8 +34,7 @@ body {
 .moving-bg-2 {
     position: relative;
     width: 100vw;
-    height: auto;
-    left: 100vw;
+    left: -100vw;
     bottom: 100vh;
     display: flex;
     z-index: -2;
@@ -56,9 +56,7 @@ body {
 .moving-bg-3 {
     position: relative;
     width: 100vw;
-    height: auto;
     bottom: 200vh;
-    right: 100vw;
     display: flex;
     z-index: -2;
     animation-name: body-shift3;
@@ -77,11 +75,11 @@ body {
 }
 
 .window-bg-div {
-    display: block;
+    display: flex;
     opacity: .2;
-    width: 100vw;
     height: 100vh;
-    background: url('/images/rps-bg-overlay-01.svg') repeat;
+    width: 100vw;
+    background: url('/images/rps-bg-overlay.png') round;
 }
 
 .game-bg {
