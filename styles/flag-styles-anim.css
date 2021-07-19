@@ -1,0 +1,111 @@
+#flag-1 {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 275px;
+    top: 283px;
+}
+
+#flag-2 {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 275px;
+    right: 0;
+    top: 283px;
+}
+
+.hide-flag-div {
+    height: 170px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:1;
+    left: 0;
+    right: 275px;
+    top: 115px;
+    background-color: #502749;
+}
+
+.hide-flag-div2 {
+    height: 170px;
+    width: 100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    left: 275px;
+    right: 0px;
+    top: 115px;
+    background-color: #502749;
+}
+
+.flag-svg {
+    height: 150px;
+    width: 100px;
+    bottom: 150px;
+    position: relative;
+    z-index: 0;
+}
+
+.round-title {
+    font-size: 19px;
+    font-family: 'Oswald', monospace;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 290px;
+}
+
+.round {
+    font-size: 30px;
+    font-family: 'Oswald', monospace;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 310px;
+}
+
+.flag-svg, .round-title, .round {
+    animation-name: unset;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes  rollUp {
+    0% {
+        transform: translateY(150px);
+    }
+    20% {
+        transform: translateY(160px);
+    }
+    30% {
+        transform: translateY(150px);
+    }
+    100% {
+        transform: translateY(-300px);
+    }
+}
+
+@keyframes rollDown {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(150px);
+    }
+}
+
+.flag-roll {
+    height: auto;
+    width: auto;
+    z-index: 1;
+    position: absolute;
+}

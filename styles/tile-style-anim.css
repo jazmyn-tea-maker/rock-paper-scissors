@@ -1,0 +1,170 @@
+#comp-1-tile {
+    animation-name: unset;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+    transform-origin: center;
+}
+
+#comp-2-tile {
+    animation-name: unset;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+    transform-origin: center;
+}
+
+#comp-3-tile {
+    animation-name: unset;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+    transform-origin: center;
+}
+
+#user-1-tile {
+    animation-name: unset;
+    animation-duration: .5s;
+    animation-timing-function:ease-in;
+    animation-fill-mode: forwards;
+}
+
+#user-2-tile {
+    animation-name: unset;
+    animation-duration: .5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+#user-3-tile {
+    animation-name: unset;
+    animation-duration: .5s;
+    animation-timing-function:ease-in;
+    animation-fill-mode: forwards;
+}
+
+#user-3-tile[tileWeeWoo]:hover, #user-2-tile[tileWeeWoo]:hover, #user-1-tile[tileWeeWoo]:hover {
+    animation-name: weeWoo;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes weeWoo {
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* User Tile Animations */
+
+@keyframes score-reveal-user {
+    100% {
+        transform: translateY(-18vh);
+    }
+    
+}
+
+@keyframes score-cover-user {
+    0% {
+        transform: translateY(-15vh);
+    }
+    100% {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes user-right-div-up {
+    100% {
+        transform: translate(-140px, -18vh);
+    }
+}
+
+@keyframes user-right-div-down {
+    0% {
+        transform: translate(-140px, -18vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes user-left-div-up {
+    100% {
+        transform: translate(140px, -18vh);
+    }
+}
+
+@keyframes user-left-div-down {
+    0% {
+        transform: translate(140px, -18vh);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Computer Tile Animations */
+
+@keyframes score-reveal-comp {
+    100% {
+        transform: translateY(18vh);
+    }
+    
+}
+
+@keyframes score-cover-comp {
+    0% {
+        transform: translateY(18vh);
+    }
+    100% {
+        transform: translateY(0vh);
+    }
+}
+
+@keyframes comp-middle-div-right {
+    0% {
+        transform: translateY(18vh);
+    }
+    100% {
+        transform: translate(20.5vw, 0vh);
+    }
+}
+
+@keyframes comp-middle-div-left {
+    0% {
+        transform: translateY(18vh);
+    }
+    100% {
+        transform: translate(-20.5vw, 0vh);
+    }
+}
+
+@keyframes comp-right-div-up {
+    100% {
+        transform: translate(-140px, 18vh);
+    }
+}
+
+@keyframes comp-right-div-down {
+    0% {
+        transform: translate(-140px, 18vh);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+@keyframes comp-left-div-up {
+    100% {
+        transform: translate(140px, 18vh);
+    }
+}
+
+@keyframes comp-left-div-down {
+    0% {
+        transform: translate(140px, 18vh);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
