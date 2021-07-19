@@ -73,33 +73,15 @@
     }
 }
 
-@keyframes user-middle-div-right {
-    0% {
-        transform: translateY(-15vh);
-    }
-    100% {
-        transform: translate(20vw, 0vh)
-    }
-}
-
-@keyframes user-middle-div-left {
-    0% {
-        transform: translateY(-15vh);
-    }
-    100% {
-        transform: translate(-20vw, 0vh)
-    }
-}
-
 @keyframes user-right-div-up {
     100% {
-        transform: translate(-20.5vw, -18vh);
+        transform: translate(-140px, -18vh);
     }
 }
 
 @keyframes user-right-div-down {
     0% {
-        transform: translate(-20.5vw, -18vh);
+        transform: translate(-140px, -18vh);
     }
     100% {
         transform: translate(0, 0);
@@ -108,13 +90,13 @@
 
 @keyframes user-left-div-up {
     100% {
-        transform: translate(20.5vw, -18vh);
+        transform: translate(140px, -18vh);
     }
 }
 
 @keyframes user-left-div-down {
     0% {
-        transform: translate(20.5vw, -18vh);
+        transform: translate(140px, -18vh);
     }
     100% {
         transform: translate(0, 0);
@@ -159,7 +141,7 @@
 
 @keyframes comp-right-div-up {
     100% {
-        transform: translate(-20.5vw, 18vh);
+        transform: translate(-140px, 18vh);
     }
 }
 
@@ -174,13 +156,13 @@
 
 @keyframes comp-left-div-up {
     100% {
-        transform: translate(20.5vw, 18vh);
+        transform: translate(140px, 18vh);
     }
 }
 
 @keyframes comp-left-div-down {
     0% {
-        transform: translate(20.5vw, 18vh);
+        transform: translate(140px, 18vh);
     }
     100% {
         transform: translate(0,0);
