@@ -269,6 +269,11 @@ body {
     animation-fill-mode: forwards;
 }
 
+.animate__bounceOut {
+    --animate-duration: 500ms;
+    --animate-delay: 0s;
+}
+
 #play-button[weeWoo]:hover {
     animation-name: weeWoo;
     animation-duration: .6s;

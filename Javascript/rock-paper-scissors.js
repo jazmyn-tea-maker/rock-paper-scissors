@@ -2,13 +2,15 @@ let playerSelect = 0;
 let computerSelect = 0;
 let playerWins = 0; //Connect to the counter.
 let computerWins = 0; //Connect to the counter.
+let playerTotalGamesWon = 0;
+let compTotalGamesWon = 0;
 let round = 1;
 let compNum = document.getElementById('comp-num-score');
 let userNum = document.getElementById('user-num-score');
 let playBtn = document.getElementById('play-button');
 let playAgainBtn = document.getElementById('play-again-button');
 let robotCover = document.getElementById('robo-cover-div');
-let flag = document.getElementsByClassName('flag-svg').item(0);
+let flag = document.getElementsByClassName('flag-svg').item(0); //.item used to grab from HTML Collection.
 let flag2 = document.getElementsByClassName('flag-svg').item(1);
 let roundTitle = document.getElementsByClassName('round-title').item(0);
 let roundTitle2 = document.getElementsByClassName('round-title').item(1);
@@ -46,7 +48,7 @@ let rollDownFlags = () => {
 }
 
 let roundAdder = () => {
-    round += 1;
+    round++;
     roundCount.innerHTML = round;
     roundCount2.innerHTML = round;
 }
@@ -63,8 +65,8 @@ let nextFlagNeededExecution = () => {
         playerSelect;
     } else {
         setTimeout(nextRoundFlags, 200);
-        settlingBetweenRoundUser();
-        settlingBetweenRoundComp();
+        setTimeout(settlingBetweenRoundUser, 200);
+        setTimeout(settlingBetweenRoundComp, 200);
     }
 }
 
@@ -111,15 +113,23 @@ let settleEndGameAnim = () => {
     if (compTile3.style['animation-name'] == 'comp-right-div-up') {
         compTile3.style['animation-name'] = 'comp-right-div-down';
     }
-    compTile2.style['animation-name'] = 'score-cover-comp';
-
+    if (true) {
+        compTile2.style['animation-name'] = 'score-cover-comp';
+    }
+    
     if (userTile1.style['animation-name'] == 'user-left-div-up') {
         userTile1.style['animation-name'] = 'user-left-div-down';
     }
     if (userTile3.style['animation-name'] == 'user-right-div-up') {
         userTile3.style['animation-name'] = 'user-right-div-down';
     }
-    userTile2.style['animation-name'] = 'score-cover-user';
+
+    if (true) {
+        userTile2.style['animation-name'] = 'score-cover-user';
+
+    }
+    rollUpFlags(); //Yes, it's here twice because if not, it doesn't
+    //cooperate.
 }
 
 let gameEndAnim = () => {
@@ -131,17 +141,19 @@ let gameEndAnim = () => {
     compNum.innerHTML = 0;
     playerWins = 0;
     computerWins = 0;
-    settleEndGameAnim();
     rollUpFlags();
-    roundCount.innerHTML = 1; //reset
-    roundCount2.innerHTML = 1; //reset
+    settleEndGameAnim();
+    round = 1;
+    roundCount.innerHTML = round; //reset
+    roundCount2.innerHTML = round; //reset
+    console.log(`User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
 }
 
 
 
 
 
-//Playing animations:
+//Playing animations/Actual Game:
 
 
 //Connects tile number to a random number between 1
@@ -150,15 +162,12 @@ let gameEndAnim = () => {
 let computerPlay = () => {
     computerSelect = numBetween1And3();
     if (computerSelect == 1) {
-        console.log(1)
         compTile1.style['animation-name'] = 'comp-left-div-up';
         compTile2.style['animation-name'] = 'score-cover-comp';
     } else if (computerSelect == 2) {
-        console.log(2)
         compTile2.style['animation-name'] = 'score-cover-comp';
         setTimeout(compTile2Up, 500);
     } else {
-        console.log(3)
         compTile3.style['animation-name'] = 'comp-right-div-up';
         compTile2.style['animation-name'] = 'score-cover-comp';
     }
@@ -173,43 +182,35 @@ let match1 = () => {
     userTile2.style['animation-name'] = 'score-cover-user';
     computerPlay();
     if (computerSelect == 2) {
-        alert('Computer Wins!');
         computerWins++;
         compNum.innerHTML = computerWins;
     } else if (computerSelect == 3) {
-        alert('Player Wins!');
         playerWins++;
         userNum.innerHTML = playerWins;
-    } else {
-        alert('Tie!');
     }
     if (playerWins == 5 || computerWins == 5) {
         winnerDeclaration();
         return;
     }
-    nextFlagNeededExecution();
+    setTimeout(nextFlagNeededExecution, 1000);
 }
 
 let match2 = () => {
     playerSelect = 2;
     computerPlay();
     if (computerSelect == 3) {
-        alert('Computer Wins!');
         computerWins++;
         compNum.innerHTML = computerWins;
     } else if (computerSelect == 1) {
-        alert('Player Wins!');
         playerWins++;
         userNum.innerHTML = playerWins;
-    } else {
-        alert('Tie!');
     }
     if (playerWins == 5 || computerWins == 5) {
         winnerDeclaration();
         return;
     }
     //Nothing, it's already paper.
-    nextFlagNeededExecution();
+    setTimeout(nextFlagNeededExecution, 1000);
 }
 
 let match3 = () => {
@@ -218,21 +219,17 @@ let match3 = () => {
     userTile2.style['animation-name'] = 'score-cover-user';
     computerPlay(); 
     if (computerSelect == 1) {
-        alert('Computer Wins!');
         computerWins++;
         compNum.innerHTML = computerWins;
     } else if (computerSelect == 2) {
-        alert('Player Wins!');
         playerWins++;
         userNum.innerHTML = playerWins;
-    } else {
-        alert('Tie!');
     }
     if (playerWins == 5 || computerWins == 5) {
         winnerDeclaration();
         return;
     }
-    nextFlagNeededExecution();
+    setTimeout(nextFlagNeededExecution, 1000);
 }
 
 let duel = () => {
@@ -246,6 +243,7 @@ let duel = () => {
 let winnerDeclaration = () => {
     if (playerWins == 5) {
         alert('Human player Wins Game!');
+        playerTotalGamesWon++;
         gameEndAnim();
         userTile1.removeEventListener('click', match1); //So the tiles aren't clickable between games.
         userTile2.removeEventListener('click', match2);
@@ -253,6 +251,7 @@ let winnerDeclaration = () => {
         return;
     } else if (computerWins == 5) {
         alert('Robot Wins Game!');
+        compTotalGamesWon++;
         gameEndAnim();
         userTile1.removeEventListener('click', match1);
         userTile2.removeEventListener('click', match2);
@@ -270,6 +269,7 @@ let winnerDeclaration = () => {
 
 
 let playBtnAnim = () => {
+    playBtn.removeAttribute('weeWoo');
     playBtn.classList.add('animate__bounceOut')
     playBtn.style['animation-fill-mode'] = 'forwards';
 }
@@ -303,5 +303,3 @@ playBtn.addEventListener('click', function () {
     playBtnAnim();
     duel();
 })
-
-console.log(`User: ${playerSelect} Comp: ${computerSelect}`);
