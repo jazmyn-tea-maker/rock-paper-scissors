@@ -53,8 +53,8 @@ let roundAdder = () => {
 
 let nextRoundFlags = () => {
     rollUpFlags();
-    setTimeout(rollDownFlags, 1000);
-    setTimeout(roundAdder, 700);
+    setTimeout(rollDownFlags, 800);
+    setTimeout(roundAdder, 600);
     
 }
 
@@ -132,8 +132,8 @@ let resetFunc = () => {
     playerWins = 0;
     computerWins = 0;
     round = 1;
-    roundCount.innerHTML = round; //reset
-    roundCount2.innerHTML = round; //reset
+    roundCount.innerHTML = round; //flag reset
+    roundCount2.innerHTML = round; //flag reset
 }
 
 let gameEndAnim = () => {
@@ -147,7 +147,6 @@ let gameEndAnim = () => {
     playAgainBtn.style.display = 'block'; //Show PlayAgain Btn
     settleEndGameAnim();   
     console.log(`User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
-    alert(`For this session... User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
 }
 
 //Playing animations/Actual Game:
@@ -240,21 +239,23 @@ let duel = () => {
 let winnerDeclaration = () => {
     if (playerWins == 5) {
         playerTotalGamesWon++;
-        gameEndAnim();
+        setTimeout(gameEndAnim, 800);
         resetFunc();
-        alert('Human player Wins Game!');
         userTile1.removeEventListener('click', match1); //So the tiles aren't clickable between games.
         userTile2.removeEventListener('click', match2);
         userTile3.removeEventListener('click', match3);
+        alert(`For this session... User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
+        setTimeout(endGameResetter, 1000);
         return;
     } else if (computerWins == 5) {
         compTotalGamesWon++;
-        gameEndAnim();
+        setTimeout(gameEndAnim, 800);
         resetFunc();
-        alert('Robot player Wins Game!');
         userTile1.removeEventListener('click', match1);
         userTile2.removeEventListener('click', match2);
         userTile3.removeEventListener('click', match3);
+        alert(`For this session... User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
+        setTimeout(endGameResetter, 1000);//Bug squasher.
         return;
     }
     
@@ -297,4 +298,15 @@ playBtn.addEventListener('click', function () {
     duel();
 })
 
-
+//Just in case there are any bugs at the end...Like animations that didn't have time to finish.
+let endGameResetter = () => {
+    let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
+    for (const element of animArr) {
+        element.style['animation-name'] = 'rollUp';
+    }
+    round = 1;
+    roundCount.innerHTML = round; //reset
+    roundCount2.innerHTML = round; //reset
+    compTile2.style['animation-name'] = 'score-cover-comp';
+    userTile2.style['animation-name'] = 'score-cover-user';
+}
