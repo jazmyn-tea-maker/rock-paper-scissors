@@ -28,11 +28,9 @@ playAgainBtn.setAttribute('weeWoo2', '1');
 
 
 let rollUpFlags = () => {
-    if (true) {
-        let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
-        for (const element of animArr) {
-            element.style['animation-name'] = 'rollUp';
-        }
+    let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
+    for (const element of animArr) {
+        element.style['animation-name'] = 'rollUp';
     }
 }
 
@@ -64,15 +62,14 @@ let nextFlagNeededExecution = () => {
     if (playerSelect == 0) {
         playerSelect;
     } else {
-        setTimeout(nextRoundFlags, 200);
-        setTimeout(settlingBetweenRoundUser, 200);
-        setTimeout(settlingBetweenRoundComp, 200);
+        setTimeout(nextRoundFlags, 100);
+        setTimeout(settlingBetweenRoundUser, 100);
+        setTimeout(settlingBetweenRoundComp, 100);
     }
 }
 
 let numBetween1And3 = () => {
-    let num = Math.floor(Math.random() * 4);
-    num == 0 ? num += 1 : num;
+    let num = Math.floor(Math.random() * 3) + 1;
     return num;
 };
 
@@ -126,33 +123,32 @@ let settleEndGameAnim = () => {
 
     if (true) {
         userTile2.style['animation-name'] = 'score-cover-user';
-
     }
-    rollUpFlags(); //Yes, it's here twice because if not, it doesn't
-    //cooperate.
+}
+
+let resetFunc = () => {
+    userNum.innerHTML = 0;
+    compNum.innerHTML = 0;
+    playerWins = 0;
+    computerWins = 0;
+    round = 1;
+    roundCount.innerHTML = round; //reset
+    roundCount2.innerHTML = round; //reset
 }
 
 let gameEndAnim = () => {
     robotCover.style['animation-name'] = 'drop-down';
     userTile2.style['animation-name'] = 'score-cover-user';
     compTile2.style['animation-name'] = 'score-cover-comp';
+    let animArr = [flag, flag2, roundTitle, roundTitle2, roundCount, roundCount2];
+    for (const element of animArr) {
+        element.style['animation-name'] = 'rollUp';
+    }
     playAgainBtn.style.display = 'block'; //Show PlayAgain Btn
-    userNum.innerHTML = 0;
-    compNum.innerHTML = 0;
-    playerWins = 0;
-    computerWins = 0;
-    rollUpFlags();
-    settleEndGameAnim();
-    round = 1;
-    roundCount.innerHTML = round; //reset
-    roundCount2.innerHTML = round; //reset
+    settleEndGameAnim();   
     console.log(`User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
     alert(`For this session... User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
 }
-
-
-
-
 
 //Playing animations/Actual Game:
 
@@ -167,7 +163,7 @@ let computerPlay = () => {
         compTile2.style['animation-name'] = 'score-cover-comp';
     } else if (computerSelect == 2) {
         compTile2.style['animation-name'] = 'score-cover-comp';
-        setTimeout(compTile2Up, 500);
+        setTimeout(compTile2Up, 200);
     } else {
         compTile3.style['animation-name'] = 'comp-right-div-up';
         compTile2.style['animation-name'] = 'score-cover-comp';
@@ -243,17 +239,19 @@ let duel = () => {
 
 let winnerDeclaration = () => {
     if (playerWins == 5) {
-        alert('Human player Wins Game!');
         playerTotalGamesWon++;
         gameEndAnim();
+        resetFunc();
+        alert('Human player Wins Game!');
         userTile1.removeEventListener('click', match1); //So the tiles aren't clickable between games.
         userTile2.removeEventListener('click', match2);
         userTile3.removeEventListener('click', match3);
         return;
     } else if (computerWins == 5) {
-        alert('Robot player Wins Game!');
         compTotalGamesWon++;
         gameEndAnim();
+        resetFunc();
+        alert('Robot player Wins Game!');
         userTile1.removeEventListener('click', match1);
         userTile2.removeEventListener('click', match2);
         userTile3.removeEventListener('click', match3);
@@ -261,12 +259,6 @@ let winnerDeclaration = () => {
     }
     
 };
-
-//Needs to be Good game in a text node if user clicks no on new UI box, and game on, with a 'Let's
-//go!' button that can be clicked.
-
-//This should open the custom dialog box. ^^^ and do that.
-
 
 
 let playBtnAnim = () => {
@@ -304,3 +296,5 @@ playBtn.addEventListener('click', function () {
     playBtnAnim();
     duel();
 })
+
+

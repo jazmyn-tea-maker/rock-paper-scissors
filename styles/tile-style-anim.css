@@ -43,12 +43,6 @@
     animation-fill-mode: forwards;
 }
 
-#user-3-tile[tileWeeWoo]:hover, #user-2-tile[tileWeeWoo]:hover, #user-1-tile[tileWeeWoo]:hover {
-    animation-name: weeWoo;
-    animation-duration: .5s;
-    animation-iteration-count: infinite;
-}
-
 @keyframes weeWoo {
     50% {
         transform: scale(1.05);
