@@ -145,6 +145,7 @@ let gameEndAnim = () => {
         element.style['animation-name'] = 'rollUp';
     }
     playAgainBtn.style.display = 'block'; //Show PlayAgain Btn
+    playAgainBtn.classList.remove('animate__bounceOut');
     settleEndGameAnim();   
     console.log(`User: ${playerTotalGamesWon} Comp: ${compTotalGamesWon}`);
 }
